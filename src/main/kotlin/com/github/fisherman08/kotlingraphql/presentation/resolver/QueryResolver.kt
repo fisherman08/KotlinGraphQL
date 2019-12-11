@@ -2,10 +2,14 @@ package com.github.fisherman08.kotlingraphql.presentation.resolver
 
 import com.coxautodev.graphql.tools.GraphQLQueryResolver
 import com.github.fisherman08.kotlingraphql.model.Player
-import com.github.fisherman08.kotlingraphql.model.Yankees
+import com.github.fisherman08.kotlingraphql.model.repository.PlayerRepository
 import org.springframework.stereotype.Component
 
 @Component
-class QueryResolver : GraphQLQueryResolver {
-    fun player(id: String): Player = Player(id = "abc", name = "田中将大")
+class QueryResolver(
+        val playerRepository: PlayerRepository
+) : GraphQLQueryResolver {
+
+    fun getPlayerByID(id: String): Player? = playerRepository.getPlayerByID(id = id)
+
 }

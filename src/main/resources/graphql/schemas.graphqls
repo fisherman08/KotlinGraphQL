@@ -1,13 +1,28 @@
-type Team {
-    name: String!
-}
+
 
 type Player {
     id: ID!
     name: String!
     team: Team
+    positions: [Position!]
+}
+
+type Position {
+    id: ID!
+    positionName: String!
+}
+
+type Team {
+    id: ID!
+    teamName: String!
+    field: Field!
+}
+
+type Field {
+    id: ID!
+    fieldName: String!
 }
 
 type Query {
-    player(id: ID!): Player
+    getPlayerByID(id: ID!): Player
 }
