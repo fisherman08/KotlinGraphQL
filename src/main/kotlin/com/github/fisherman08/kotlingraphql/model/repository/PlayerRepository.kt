@@ -13,8 +13,7 @@ class PlayerRepository {
             "4" to Player(id = "4", name = "大谷翔平")
     )
 
-    fun getPlayerByID(id: String): Player? {
-        return dict[id]
-    }
+    fun getPlayerByID(id: String): Player? = dict[id]
 
+    fun getAllPlayers(): List<Player> = dict.values.toList()
 }

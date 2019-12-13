@@ -12,4 +12,5 @@ class QueryResolver(
 
     fun getPlayerByID(id: String): Player? = playerRepository.getPlayerByID(id = id)
 
+    fun getAllPlayers(): List<Player> = playerRepository.getAllPlayers()
 }

@@ -25,4 +25,5 @@ type Field {
 
 type Query {
     getPlayerByID(id: ID!): Player
+    getAllPlayers: [Player!]
 }
